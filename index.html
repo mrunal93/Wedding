@@ -283,7 +283,7 @@
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form class="form-inline">
+					
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
 								<label for="name" class="sr-only">Name</label>
@@ -297,9 +297,9 @@
 							</div>
 						</div>
 						<div class="col-md-4 col-sm-4">
-							<button type="submit" id="WhatsApp" class="btn btn-default btn-block">I am Attending</button>
+							<a target="_blank"  href="https://api.whatsapp.com/send/?phone=%2B14155238886&text=join+probably-rocky&type=phone_number&app_absent=0"><button onclick="timmer()"  class="btn btn-default btn-block">I am Attending</button></a>
 						</div>
-					</form>
+				
 				</div>
 			</div>
 		</div>
@@ -353,6 +353,39 @@
         day: d.getDate(),
         enableUtc: false
     });
+	function timmer(){
+	alert('<a href= "http://www.google.com">Please read the rules</a>')
+	var name = $('#name').val()
+	if(name != ''){
+	var email = $('#email').val()
+
+		 setTimeout(function(){sendWhatsAppMessage(name,email)},10000);}
+		 else{
+alert('Please Enter your Name or Email')
+}
+}
+	function sendWhatsAppMessage(n,e){
+	alert('Mrunal')
+
+	var settings = {
+  "url": "https://api.twilio.com/2010-04-01/Accounts/ACcb2bf982b47b2a0b5a902ab02d5d1a38/Messages.json",
+  "method": "POST",
+  "timeout": 0,
+  "headers": {
+    "Authorization": "Basic QUNjYjJiZjk4MmI0N2IyYTBiNWE5MDJhYjAyZDVkMWEzODowYTllNGMzNmFkNjQwZGRjYTA5NWY4Mjg4MjYxMThhZQ==",
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  "data": {
+    "To": "whatsapp:+91"+e,
+    "From": "whatsapp:+14155238886",
+    "Body": "My dear *"+ n +"*, I would be grateful to have your presence near me on the most important and responsible day of my life – the day when I get married to my beloved man/woman. I anticipate seeing you, hearing your words of wisdom, and getting a tight hug before I start my new life with the person I love. Please click the link to get the *location* :- Mangalam Villa Shaadi Hall 093035 79836 https://maps.app.goo.gl/BEnAm2bSgzFY1p726"
+  }
+};
+
+$.ajax(settings).done(function (response) {
+  
+});
+	}
 </script>
 
 	</body>
