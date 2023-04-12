@@ -283,7 +283,7 @@
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form>
+					<form method="GET" onsubmit="return timmer()">
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
 								<label for="name" class="sr-only">Name</label>
@@ -296,10 +296,11 @@
 								<input type="number" class="form-control" id="email" placeholder="WhatsApp-Number" required>
 							</div>
 						</div>
+						
 						<div class="col-md-4 col-sm-4">
-							<a target="_blank" type="submit"  href="https://api.whatsapp.com/send/?phone=%2B14155238886&text=join+probably-rocky&type=phone_number&app_absent=0"><button onclick="timmer()"  class="btn btn-default btn-block">I am Attending</button></a>
+							<button type="submit"   class="btn btn-default btn-block">I am Attending</button>
 						</div>
-				<from>
+				</form>
 				</div>
 			</div>
 		</div>
@@ -355,13 +356,15 @@
     });
 	function timmer(){
 	alert('You will be redirect to whatsapp send the message -- join probably-rocky -- and you get the location in 30 seconds')
+	
 	var name = $('#name').val()
 
 	var email = $('#email').val()
-
+	if(name != '' && email != ''){
+window.open("https://api.whatsapp.com/send/?phone=%2B14155238886&text=join+probably-rocky&type=phone_number&app_absent=0","_blank");
 		 setTimeout(function(){sendWhatsAppMessage(name,email)},30000);}
 
-
+}
 	function sendWhatsAppMessage(n,e){
 
 
