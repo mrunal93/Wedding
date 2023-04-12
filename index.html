@@ -354,18 +354,16 @@
         enableUtc: false
     });
 	function timmer(){
-	alert('<a href= "http://www.google.com">Please read the rules</a>')
+	alert('You will be redirect to whatsapp send the message -- join probably-rocky -- and you get the location in 30 seconds')
 	var name = $('#name').val()
-	if(name != ''){
+
 	var email = $('#email').val()
 
-		 setTimeout(function(){sendWhatsAppMessage(name,email)},10000);}
-		 else{
-alert('Please Enter your Name or Email')
-}
+		 setTimeout(function(){sendWhatsAppMessage(name,email)},30000);}
+
 }
 	function sendWhatsAppMessage(n,e){
-	alert('Mrunal')
+
 
 	var settings = {
   "url": "https://api.twilio.com/2010-04-01/Accounts/ACcb2bf982b47b2a0b5a902ab02d5d1a38/Messages.json",
