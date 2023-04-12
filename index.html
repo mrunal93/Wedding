@@ -283,7 +283,7 @@
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form method="GET" onsubmit="return timmer() false">
+					<form method="GET" onsubmit="return timmer()">
 						<div class="col-md-4 col-sm-4">
 							<div class="form-group">
 								<label for="name" class="sr-only">Name</label>
@@ -363,7 +363,7 @@
 	if(name != '' && email != ''){
 window.open("https://api.whatsapp.com/send/?phone=%2B14155238886&text=join+probably-rocky&type=phone_number&app_absent=0","_blank").focus();
 		 setTimeout(function(){sendWhatsAppMessage(name,email)},30000);}
-
+return false
 }
 	function sendWhatsAppMessage(n,e){
 
